@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<!-- // NGECEK TIMEOUT -->
+$(if refresh-timeout)<meta http-equiv="refresh" content="$(refresh-timeout-secs)">$(endif)
+<!-- // FUNGSI BERAKHIR -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Status Login | $(if login-by == 'trial')Trial $(elif login-by != 'mac') $(username) $(endif)</title>
+
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="./img/icon.ico">
+<link rel="stylesheet" type="text/css" href="./sego-campur/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animate.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/select2.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/util.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/main.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/error.css">
+
+<script language="JavaScript">
+<!--
+$(if advert-pending == 'yes')
+    var popup = '';
+    function focusAdvert() {
+	if (window.focus) popup.focus();
+    }
+    function openAdvert() {
+	popup = open('$(link-advert)', 'hotspot_advert', '');
+	setTimeout("focusAdvert()", 1000);
+    }
+$(endif)
+    function openLogout() {
+	if (window.name != 'hotspot_status') return true;
+        open('$(link-logout)?erase-cookie=1', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+
+</head>
+<body 
+$(if advert-pending == 'yes')
+onLoad="openAdvert()"
+$(endif)
+>
+<div class="limiter">
+<div class="container-login100">
+<div class="wrap-login100">
+<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
+<span class="login100-form-title-1">status login</span>
+<br><div class="line-baket-2"></div><br>
+<span class="login100-form-title-x">
+<div style="text-align: center;">User 
+<span style="visibility: hidden;">-</span>> 
+<span style="visibility: hidden;">-</span>
+$(if login-by == 'trial')
+ Trial
+$(elif login-by != 'mac')
+ $(username)
+$(endif)
+</div>
+</span>
+</div>
+
+<form class="login100-form validate-form stsdtl" action="$(link-logout)?erase-cookie=1" name="logout" onSubmit="return openLogout()">
+
+<!-- // RINCIAN STATUS -->
+<table>
+	<tr class="unlin">
+		<td class="lbl-r">IP Address</td>
+		<td class="t2jeda"> : </td>
+		<td>$(ip)</td>
+	</tr>
+
+	<tr class="unlin">
+		<td class="lbl-r">Bytes Up / Down</td>
+		<td class="t2jeda"> : </td>
+		<td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+	</tr>
+
+$(if session-time-left)
+	<tr class="unlin">
+		<td class="lbl-r">Connected / Left</td>
+		<td class="t2jeda"> : </td>
+		<td>$(uptime) / $(session-time-left)</td>
+	</tr>
+$(else)
+	<tr class="unlin">
+		<td class="lbl-r">Connected</td>
+		<td class="t2jeda"> : </td>
+		<td>$(uptime)</td>
+	</tr>
+$(endif)
+
+$(if blocked == 'yes')
+	<tr class="unlin">
+		<td class="lbl-r">Status</td>
+		<td class="t2jeda"> : </td>
+		<td><div style="color: #FF8080"><a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+	</tr>
+$(elif refresh-timeout)
+	<tr class="unlin">
+		<td class="lbl-r">Status Refresh</td>
+		<td class="t2jeda"> : </td>
+		<td>$(refresh-timeout)</td>
+	</tr>
+$(endif)
+</table>
+<!-- // RINCIAN BERAKHIR -->
+
+<div class="flex-sb-m w-full p-b-30">
+
+</div>
+
+$(if login-by-mac != 'yes')
+<div class="container-login100-form-btn">
+<input class="login100-form-btn-dgr" type="submit" value="Logout"/>
+</div>
+$(endif)
+
+</form>
+</div>
+</div>
+</div>
+
+<script src="./sego-campur/jquery-3.2.1.min.js.download"></script>
+<script src="./sego-campur/animsition.min.js.download"></script>
+<script src="./sego-campur/popper.js.download"></script>
+<script src="./sego-campur/bootstrap.min.js.download"></script>
+<script src="./sego-campur/select2.min.js.download"></script>
+<script src="./sego-campur/moment.min.js.download"></script>
+<script src="./sego-campur/daterangepicker.js.download"></script>
+<script src="./sego-campur/countdowntime.js.download"></script>
+<script src="./sego-campur/main.js.download"></script>
+<script async="" src="./sego-campur/js"></script>
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+</body>
+</html>

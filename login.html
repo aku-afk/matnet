@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Login ke jaringan Wi-Fi</title>
+
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="./img/icon.ico">
+<link rel="stylesheet" type="text/css" href="./sego-campur/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animate.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/select2.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/util.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/main.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/error.css">
+
+</head>
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	//<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.username.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<div class="limiter">
+<div class="container-login100">
+<div class="wrap-login100">
+<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
+<span class="login100-form-title-1">login wi-fi</span>
+</div>
+
+<center>
+	<div class="option-login">
+		<center>
+		<table>
+			<tr>
+				<td><a class="btn-option optbox" href="#">TOKEN</a></td>
+				<td><span style="visibility: hidden;">---</span></td>
+				<td><a class="btn-option" href="member.html">MEMBER</a></td>
+			</tr>
+		</table>
+	</center>
+	</div>
+</center>
+
+$(if error)
+<center>
+<div id="x" class="error-msg">
+<div class="isi-error">
+<span style="font-family: courier;"><b>[!]  ERROR</b></span>
+<a href="#x" class="silang-x"><b> [X] </b></a>
+<div class="line-baket"></div>
+<br>
+<div class="isi-error">$(error)</div>
+</div>
+</div>
+</center>
+$(endif)
+
+<form class="login100-form validate-form" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+    <input type="hidden" name="dst" value="$(link-orig)" />
+    <input type="hidden" name="popup" value="true" />
+    <div class="wrap-input100 m-b-26">
+        <span class="label-input100">Token</span>
+        <input class="input100" type="text" name="username" placeholder="Masukkan Token" value="$(username)">
+        <span class="focus-input100"></span>
+    </div>
+    <div class="flex-sb-m w-full p-b-30">
+        <!-- // FUNGSI JIKA FREE TRIAL TERSEDIA -->
+        $(if trial == 'yes')
+        <div>
+            <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)" class="txt1">Coba Wi-Fi selama 3 menit <b>(gratis)</b></a>
+        </div>
+        $(endif)
+        <!-- // FUNGSI BERAKHIR -->
+    </div>
+    <div class="container-login100-form-btn">
+        <input class="login100-form-btn" type="submit" value="Login"/>
+    </div>
+</form>
+
+</div>
+</div>
+</div>
+
+<script src="./jquery-3.5.1.js"></script>
+<script src="./splitpage.js"></script>
+
+<script src="./sego-campur/jquery-3.2.1.min.js.download"></script>
+<script src="./sego-campur/animsition.min.js.download"></script>
+<script src="./sego-campur/popper.js.download"></script>
+<script src="./sego-campur/bootstrap.min.js.download"></script>
+<script src="./sego-campur/select2.min.js.download"></script>
+<script src="./sego-campur/moment.min.js.download"></script>
+<script src="./sego-campur/daterangepicker.js.download"></script>
+<script src="./sego-campur/countdowntime.js.download"></script>
+<script src="./sego-campur/main.js.download"></script>
+<script async="" src="./sego-campur/js"></script>
+
+<script type="text/javascript">
+//<!--
+  document.login.username.focus();
+//-->
+</script>
+
+</body>
+</html>

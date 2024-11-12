@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Anda Telah Logout</title>
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/png" href="./img/icon.ico">
+<link rel="stylesheet" type="text/css" href="./sego-campur/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animate.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/select2.min.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/util.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/main.css">
+<link rel="stylesheet" type="text/css" href="./sego-campur/error.css">
+
+</head>
+<body>
+
+<script language="JavaScript">
+<!--
+    function openLogin() {
+	if (window.name != 'hotspot_logout') return true;
+	open('$(link-login)', '_blank', '');
+	window.close();
+	return false;
+    }
+//-->
+</script>
+
+<div class="limiter">
+<div class="container-login100">
+<div class="wrap-login100">
+<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
+<span class="login100-form-title-1">anda telah logout</span>
+</div>
+
+<form class="login100-form validate-form stsdtl" action="$(link-login)" name="login" onSubmit="return openLogin()">
+
+<!-- // RINCIAN STATUS -->
+<table>
+	<tr class="unlin">
+		<td class="lbl-r">Username</td>
+		<td class="t2jeda"> : </td>
+		<td>$(username)</td>
+	</tr>
+
+	<tr class="unlin">
+		<td class="lbl-r">IP Address</td>
+		<td class="t2jeda"> : </td>
+		<td>$(ip)</td>
+	</tr>
+
+	<tr class="unlin">
+		<td class="lbl-r">MAC Address</td>
+		<td class="t2jeda"> : </td>
+		<td>$(mac)</td>
+	</tr>
+
+	<tr class="unlin">
+		<td class="lbl-r">Session Time</td>
+		<td class="t2jeda"> : </td>
+		<td>$(uptime)</td>
+	</tr>
+
+$(if session-time-left)
+	<tr class="unlin">
+		<td class="lbl-r">Time Left</td>
+		<td class="t2jeda"> : </td>
+		<td>$(session-time-left)</td>
+	</tr>
+$(endif)
+
+	<tr class="unlin">
+		<td class="lbl-r">Bytes Up / Down</td>
+		<td class="t2jeda"> : </td>
+		<td>$(bytes-in-nice) / $(bytes-out-nice)</td>
+	</tr>
+
+</table>
+<!-- // RINCIAN BERAKHIR -->
+
+<div class="flex-sb-m w-full p-b-30"></div>
+
+<div class="container-login100-form-btn">
+<input class="login100-form-btn" type="submit" value="Login"/>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+
+<script src="./sego-campur/jquery-3.2.1.min.js.download"></script>
+<script src="./sego-campur/animsition.min.js.download"></script>
+<script src="./sego-campur/popper.js.download"></script>
+<script src="./sego-campur/bootstrap.min.js.download"></script>
+<script src="./sego-campur/select2.min.js.download"></script>
+<script src="./sego-campur/moment.min.js.download"></script>
+<script src="./sego-campur/daterangepicker.js.download"></script>
+<script src="./sego-campur/countdowntime.js.download"></script>
+<script src="./sego-campur/main.js.download"></script>
+<script async="" src="./sego-campur/js"></script>
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+</body>
+</html>

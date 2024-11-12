@@ -1,0 +1,100 @@
+@font-face{
+	font-family:Poppins-Bold;
+	src:url(../fonts/poppins/Poppins-Bold.ttf)
+}
+
+.option-login {
+	text-align: center;
+	margin-top: 25px;
+	border-radius: 5px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: white;
+	text-align: left;
+	width: 85%;
+	height: 50px;
+}
+.btn-option {
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-size: 15px;
+	border-radius: 5px;
+	font-family: Poppins-Bold;
+	padding: 10px 30px 10px 30px;
+}
+.optbox,
+.btn-option:hover,
+.btn-option:active {
+	background-color: #57b846;
+	color: white;
+	border-radius: 5px;
+}
+.off-f {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.error-msg {
+	margin-top: 25px;
+	border-radius: 5px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: rgba(255, 0, 10, 0.55);
+	color: white;
+	text-align: left;
+	width: 85%;
+}
+.notip-msg {
+	margin-top: 25px;
+	border-radius: 5px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: rgba(10, 70, 255, 0.55);
+	color: white;
+	text-align: left;
+	width: 85%;
+}
+.silang-x,
+.silang-x:hover,
+.silang-x:active,
+.silang-x:focus {
+	position: absolute;
+	right: 15%;
+	font-family: courier;
+	text-align: right;
+	color: white;
+}
+
+#x:target {
+	display: none;
+}
+
+.isi-error {
+	margin-left: 20px;
+}
+.line-baket {
+	background: #fff;
+	width: 90%;
+	height: 1px;
+}
+.line-baket-2 {
+	background: #fff;
+	width: 60%;
+	height: 1px;
+}
+
+.lbl-r {
+	text-align: right;
+}
+
+.t2jeda {
+	text-align: center;
+	width: 30px;
+}
+
+.stsdtl0 {
+	margin-left: 100px;
+}
+
+.unlin {
+	border-bottom: solid gray 0.7px;
+}
